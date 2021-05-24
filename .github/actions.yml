@@ -1,0 +1,11 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  run-guthub-actions:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Simple JS Action
+        # It takes reference to the actions
+        uses: actions/hello-world-javascript-action@v1
