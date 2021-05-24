@@ -6,6 +6,11 @@ jobs:
   run-guthub-actions:
     runs-on: ubuntu-latest
     steps: 
+      - name: List Files 
+        run: |
+          pwd
+          ls
+          
       - name: Simple JS Action
         id: greet
         # It takes reference to the actions
