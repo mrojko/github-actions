@@ -10,7 +10,12 @@ jobs:
         run: |
           pwd
           ls
-          
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files after checkout
+        run: |
+          pwd
+          ls -a
       - name: Simple JS Action
         id: greet
         # It takes reference to the actions
