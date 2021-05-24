@@ -2,6 +2,7 @@ name: Shell Commands
 
 on: [push]
 
+# each job runs in pralalel on it's own machine
 jobs: 
   run-shell-command: 
     runs-on: ubuntu-latest
@@ -18,3 +19,12 @@ jobs:
           print(platform.processor())
         #it's run on python shell and not bash
         shell: python
+  #You have to check which bash is default for each operating system
+  run-windows-commands: 
+    runs-on: windows-latest
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
