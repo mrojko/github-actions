@@ -6,10 +6,8 @@ jobs:
   run-guthub-actions:
     runs-on: ubuntu-latest
     steps: 
-      - name: List Files 
-        run: |
-          pwd
-          ls
+      - name: Print environment variables
+        run: | 
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
