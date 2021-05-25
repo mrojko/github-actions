@@ -2,8 +2,10 @@ name: Actions Workflow
 
 # Here are the events specified
 on: 
+  shedule:
+    - cron: "0/5 * * * *"
   #Push doesn't have activity types
-  push: 
+  # push: 
   pull_request:
     # Add activity type
     types: [closed, assigned, opened, reopened]
