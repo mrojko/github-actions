@@ -1,14 +1,21 @@
 name: Actions Workflow
 
-# Here are the events specified
 on: 
+  # push:
+  #   branches:
+  #     - master
+  #     - 'feature/**' #mathces feature/featureA
+  #     - '!feature/featC' #ignore this branch
+  #   tags:
+  #     - v1.*
+  #   paths:
+  #     - '**.js' # when js is pushed
+  # repository_dispatch:
+  #   types: [build]
   # shedule:
-  #   - cron: "0/5 * * * *"
-  #Push doesn't have activity types
-  # push: 
-  pull_request:
-    # Add activity type
-    types: [closed, assigned, opened, reopened]
+  #   - cron: "0/5 * * * *" 
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
 
 jobs:
   run-guthub-actions:
