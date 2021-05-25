@@ -2,8 +2,8 @@ name: Actions Workflow
 
 # Here are the events specified
 on: 
-  shedule:
-    - cron: "0/5 * * * *"
+  # shedule:
+  #   - cron: "0/5 * * * *"
   #Push doesn't have activity types
   # push: 
   pull_request:
