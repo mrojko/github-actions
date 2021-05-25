@@ -1,5 +1,6 @@
 name: Actions Workflow
 
+# Here are the events specified
 on: [push, pull_request]
 
 jobs:
