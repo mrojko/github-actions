@@ -1,6 +1,7 @@
 name: Shell Commands
 
-on: [push]
+on: 
+  # push
 
 # each job runs in pralalel on it's own machine
 jobs: 
