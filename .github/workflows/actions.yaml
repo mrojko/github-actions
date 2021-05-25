@@ -1,10 +1,11 @@
 name: Actions Workflow
 
 # Here are the events specified
-# Add activity type
 on: 
+  #Push doesn't have activity types
   push: 
   pull_request:
+    # Add activity type
     types: [closed, assigned, opened, reopened]
 
 jobs:
