@@ -1,11 +1,12 @@
 name: Context
 
 on: 
-  [push, pull_request]
+  # [push, pull_request]
 
 jobs: 
   context-job: 
     runs-on: ubuntu-latest
+    #timeout-minutes: 360
     steps: 
       - name: Dump Guthub demo
         env:
