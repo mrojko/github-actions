@@ -1,0 +1,22 @@
+name: Context
+
+on: 
+  push:
+
+jobs: 
+  context-job: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Dump Guthub demo
+        env:
+          GITHUB_CONTEXT: ${{toJson(github)}}
+          JOB_CONTEXT: ${{toJson(job)}}
+          STEP_CONTEXT: ${{toJson(steps)}}
+          RUNNER_CONTEXT: ${{toJson(runner)}}
+        run: |
+          echo "$GITHUB_CONTEXT"
+          echo "$JOB_CONTEXT"
+          echo "$STEP_CONTEXT"
+          echo "$RUNNER_CONTEXT"
+
+
