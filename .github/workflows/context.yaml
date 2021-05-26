@@ -13,10 +13,13 @@ jobs:
           JOB_CONTEXT: ${{toJson(job)}}
           STEP_CONTEXT: ${{toJson(steps)}}
           RUNNER_CONTEXT: ${{toJson(runner)}}
+          STRATEGY_CONTEXT: ${{toJson(strategy)}}
+          MATRIX_CONTEXT: ${{toJson(matrix)}}
         run: |
           echo "$GITHUB_CONTEXT"
           echo "$JOB_CONTEXT"
           echo "$STEP_CONTEXT"
           echo "$RUNNER_CONTEXT"
+          echo "$MATRIX_CONTEXT"
 
 
