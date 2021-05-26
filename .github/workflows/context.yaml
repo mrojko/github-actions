@@ -4,22 +4,32 @@ on:
   push:
 
 jobs: 
-  context-job: 
+  # context-job: 
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #     - name: Dump Guthub demo
+  #       env:
+  #         GITHUB_CONTEXT: ${{toJson(github)}}
+  #         JOB_CONTEXT: ${{toJson(job)}}
+  #         STEP_CONTEXT: ${{toJson(steps)}}
+  #         RUNNER_CONTEXT: ${{toJson(runner)}}
+  #         STRATEGY_CONTEXT: ${{toJson(strategy)}}
+  #         MATRIX_CONTEXT: ${{toJson(matrix)}}
+  #       run: |
+  #         echo "$GITHUB_CONTEXT"
+  #         echo "$JOB_CONTEXT"
+  #         echo "$STEP_CONTEXT"
+  #         echo "$RUNNER_CONTEXT"
+  #         echo "$MATRIX_CONTEXT"
+  
+  functions:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Dump Guthub demo
-        env:
-          GITHUB_CONTEXT: ${{toJson(github)}}
-          JOB_CONTEXT: ${{toJson(job)}}
-          STEP_CONTEXT: ${{toJson(steps)}}
-          RUNNER_CONTEXT: ${{toJson(runner)}}
-          STRATEGY_CONTEXT: ${{toJson(strategy)}}
-          MATRIX_CONTEXT: ${{toJson(matrix)}}
-        run: |
-          echo "$GITHUB_CONTEXT"
-          echo "$JOB_CONTEXT"
-          echo "$STEP_CONTEXT"
-          echo "$RUNNER_CONTEXT"
-          echo "$MATRIX_CONTEXT"
+    steps:
+      - name: dump
+        run |
+          echo ${{ contains ('hello', '11')}}
+          echo ${{ startsWith('hello', 'he')}}
+          echo ${{ endsWith('hello', 'lo')}}
+          echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!')}}
 
 
