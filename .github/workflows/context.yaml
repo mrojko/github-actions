@@ -1,7 +1,7 @@
 name: Context
 
 on: 
-  push:
+  [push, pull-request]
 
 jobs: 
   context-job: 
@@ -21,8 +21,16 @@ jobs:
           echo "$STEP_CONTEXT"
           echo "$RUNNER_CONTEXT"
           echo "$MATRIX_CONTEXT"
+      - name: Run failure job
+        if: failure()
+        run: echo "that's failure step"
+      - name: Run always
+        if: always()
+        run: echo "this runs always"
+        
   functions:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     steps:
       - name: functions
         run: |
