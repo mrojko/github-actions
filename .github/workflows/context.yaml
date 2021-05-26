@@ -1,7 +1,7 @@
 name: Context
 
 on: 
-  [push, pull-request]
+  [push, pull_request]
 
 jobs: 
   context-job: 
@@ -27,7 +27,7 @@ jobs:
       - name: Run always
         if: always()
         run: echo "this runs always"
-        
+
   functions:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
