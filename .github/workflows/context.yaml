@@ -21,15 +21,12 @@ jobs:
           echo "$STEP_CONTEXT"
           echo "$RUNNER_CONTEXT"
           echo "$MATRIX_CONTEXT"
-  
   functions:
     runs-on: ubuntu-latest
     steps:
       - name: functions
         run |
-          echo ${{ contains ('hello', '11')}}
-          echo ${{ startsWith('hello', 'he')}}
-          echo ${{ endsWith('hello', 'lo')}}
-          echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!')}}
-
-
+          echo ${{ contains ('hello', '11') }}
+          echo ${{ startsWith('hello', 'he') }}
+          echo ${{ endsWith('hello', 'lo') }}
+          echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
